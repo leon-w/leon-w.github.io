@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tabelle aus .kara</title>
+	</head>
+	<body>
+
+		<style type="text/css">
+			body {
+				font-family: Lucida, Monospace;
+				font-size: 25px;
+			}
+			td {
+			    text-align: center;
+			    vertical-align: middle;
+			}
+
+			table {
+			    border-collapse: collapse;
+			}
+
+			.left {
+			    text-align: left;
+			    padding: 3px 10px 3px 10px;
+			}
+
+			tr:nth-child(even){background-color: #f2f2f2}
+
+			.top {
+				color: white;
+				background-color: rgb(82, 82, 82);
+				padding: 10px;
+			}
+
+		</style>
+
+
+		<input id="file_in" type="file" accept=".kara" onchange="loadKara(event)">
+
+		<button onclick="location.reload();">Reset</button>
+
+		<br>
+		<div id="table_div"></div>
+
+		<script>
+
+		function loadKara(event) {
+			var input = event.target;
+			var reader = new FileReader();
+			var text;
+			reader.onload = function(){
+		    var text = reader.result;
+		    main(text);
+		    };
+		    reader.readAsText(input.files[0]);
+		}
+
+		function main(raw_text) {
+
+			try {
+				parse_xml(raw_text);
+			}
+			catch(err) {
+				console.log(err);
+				alert("Fehlerhafte Datei!\n\nDatei muss folgende Regeln erfüllen:\nIn jedem Schritt muss genau 1x geschrieben werden (keine Pfeile)\nFälle müssen einzeln angegeben werden\n");
+				document.getElementById("file_in").value = null;
+			}
+		}
+
+		function parse_xml(text) {
+			var parser = new DOMParser();
+		    var xml = parser.parseFromString(text, "text/xml");
+
+		    var start_state = xml.getElementsByTagName("XmlStateMachine")[0].getAttribute("startState");
+		    
+		    var states = [];
+		    for (var i of xml.getElementsByTagName("XmlState")) {
+		    	states.push(i.getAttribute("name"));
+		    }
+
+		    var transitions = [];
+		    for (var i of xml.getElementsByTagName("XmlTransition")) {
+		    	var from = i.getAttribute("from"); // <---
+		    	var to = i.getAttribute("to"); // <---
+
+			    for (var j of i.getElementsByTagName("XmlSensorValue")) {
+			    	if (j.getAttribute("value") == "1") {
+			    		var on = j.getAttribute("name");
+			    		switch(on) {
+						    case "onOne":
+						        on = "1"
+						        break;
+						    case "onZero":
+						        on = "0"
+						        break;
+						    case "onTerm":
+						        on = "#"
+						        break;
+						    case "onEmpty":
+						        on = "□"
+						        break;
+						}
+			    	}
+			    }
+				var commands = i.getElementsByTagName("XmlCommand");
+
+				var write = commands[0].getAttribute("name");
+				switch(write) {
+					case "putOne":
+						write = "1";
+						break;
+					case "putZero":
+						write = "0";
+						break;
+					case "putTerm":
+						write = "#";
+						break;
+					case "putE":
+						write = "□";
+						break;
+				}
+				try {
+					var move = commands[1].getAttribute("name");
+					switch(move) {
+						case "moveRight":
+							move = "→";
+							break;
+						case "moveLeft":
+							move = "←";
+							break;
+					}
+				}
+				catch(err) {
+					var move = "H";
+				}
+				transitions.push({"from":from, "to":to, "on":on, "write":write, "move":move});
+		    }
+		    create_table(transitions, states);
+		}
+
+		function create_table(transitions_list, states_list) {
+
+			var all_ons = [];
+			for (var i of transitions_list){
+				all_ons.push(i["on"]);
+			}
+			all_ons = all_ons.filter(function(elem, index, self) {return index == self.indexOf(elem);});
+			var all_states = states_list.sort();
+			all_states.splice(all_states.indexOf("Stop"), 1)
+			all_states.push("Stop");
+
+			var table_div = document.getElementById("table_div");
+
+		    var table = document.createElement("table");
+		    table.border = "1";
+
+		    var tableBody = document.createElement("tbody");
+		    table.appendChild(tableBody);
+
+		    for (var i = 0; i < (all_states.length+1); i++) {
+		        var tr = document.createElement("tr");
+		        tableBody.appendChild(tr);
+
+		        for (var j = 0; j < (all_ons.length+1); j++) {
+		            var td = document.createElement("td");
+		            td.width = "200";
+
+		            var text = "";
+		            if ((i == 0 ) && (j > 0)) {
+		            	text = all_ons[j-1];
+		            	td.className = "top";
+		            }
+		            if ((j == 0) && (i == 0)) {
+		            	text = "Zustand";
+		            	td.className = "top";
+		            }
+		            if ((i > 0) && (j == 0)) {
+		            	text = all_states[i-1];
+		            	td.className = "left";
+		            }
+
+		            var read = all_ons[j-1];
+		            var state = all_states[i-1];
+
+		            for (var x of transitions_list) {
+		            	if ((x["on"] == read) && (x["from"] == state)) {
+		            		text = x["write"] + " | " + x["to"] + " | " + x["move"];
+		            	}
+		            }
+
+		            td.appendChild(document.createTextNode(text));
+		            tr.appendChild(td);
+		        }
+		    }
+		    table_div.appendChild(document.createElement("br"));
+		    var filename = document.getElementById("file_in").value;
+		    table_div.appendChild(document.createTextNode(filename.match(/[^\/\\]+$/)));
+		    table_div.appendChild(table);
+		}
+
+		</script>
+	</body>
+</html>

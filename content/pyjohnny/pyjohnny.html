@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>PyJohnny - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>PyJohnny</h1>
+                <span>Python, PyQT, Remake</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">PyJohnny & Assembler Editor</span><br>
+            		<a href="pyjohnny.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (24MB)</span>
+            		</a>
+            		<a href="pyjohnny.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (9MB)</span>
+            		</a>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		<center><b><u>Dieses Programm enthält Software/Ideen von Peter Dauscher</u></b> <i><a href="https://sourceforge.net/projects/johnnysimulator">Sourceforge Project</a></i></center>
+            	</p>
+            	<p>
+            		Johnny ist ein Programm von Peter Dauscher mit dem ein einfacher Von-Neumann-Rechner über eine grafische Oberfläche simuliert und programmiert werden kann.
+            		<a href="johnny_doc.pdf" target="_blank">Dokumentation</a> 
+            	</p>
+            	<img src="img1.png" style="width: 1012px;height: 762px;">
+            	<br>
+            	<p>
+            		PyJohnny ist ein Python-Remake von Johnny mit modernerer Benutzeroberfläche, schnellerem Programmablauf und Minimalisierung auf den Macrocode.
+            		Die Bedienung und Steuerelemente sind nahezu identisch zu Johnny, weshalb die <a href="johnny_doc.pdf" target="_blank">Dokumentation</a> auch für PyJohnny hilfreich ist.
+            	</p>
+            	<img src="img2.png" style="width: 952px;height: 792px;">
+            	<br>
+            	<p>
+            		Das Programm im RAM wird über ein GUI zusammengeklickt.
+            	</p>
+            	<img src="img3.png" style="width: 952px;height: 351px;">
+            	<br>
+            	<p>
+            		Bevorzugt man jedoch das Schreiben des Codes mit der Tastatur, kann über das Menü "Tools" oder der Taste F1 der Assembler-Editor gestartet werden. Mit diesem
+            		kann Assembler-Code geschrieben, auf korrekte Syntax geprüft und zu einer .ram-Datei kompiliert werden. Str+Leer öffnet die Codevervollständigung mit den verfügbaren Befehlen.
+            		Kommentare nach einer Raute ("#") werden vom Compiler ignoriert. Über den Menüpunkt "Dekompilieren..." können auch breits kompilierte .ram-Dateien bearbeitet werden.
+            	</p>
+            	<img src="img4.png" style="width: 458px;height: 469px;">
+            	</div>
+            	
+            	
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">PyJohnny & Assembler Editor</span><br>
+            		<a href="pyjohnny.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (24MB)</span>
+            		</a>
+            		<a href="pyjohnny.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (9MB)</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

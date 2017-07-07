@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Subnet Calculator - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Subnet Calculator</h1>
+                <span>Python, PyQT, Remake</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Subnet Calculator</span><br>
+            		<a href="subnet_calc.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (15MB)</span>
+            		</a>
+            		<a href="snubnet_calc.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (11KB)</span>
+            		</a>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		Der (Classful) Subnet-Calculator erlaubt die einfache Berechnungen von Subnetzen, ausgehend von Netzklasse, 
+            		Zahl der Bits der Netzmaske, Subnetzmaske, maximaler Zahl der Subnetze, Zahl der Bits der Netzmaske und Zahl der Hosts pro Subnetz.
+            	</p>
+            	<p>
+            		Zudem wird der Bereich der Host-Adressen, die Broadcastadresse und eine Subnet Bitmap angezeigt.
+            	</p>
+            	<p>
+            		Offline-Anwendung nach: <a href="http://www.subnet-calculator.com/">www.subnet-calculator.com</a>
+            	</p>
+            	<img src="img2.gif" style="width: 493px; height: 453px;">
+            	</div>
+            	
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Subnet Calculator</span><br>
+            		<a href="subnet_calc.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (15MB)</span>
+            		</a>
+            		<a href="snubnet_calc.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (11KB)</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

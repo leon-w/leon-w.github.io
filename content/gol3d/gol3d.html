@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>Spiel des Lebens 3D - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Spiel des Lebens 3D</h1>
+                <span>Python, PyQT, OpenGL</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Spiel des Lebens 3D</span><br>
+            		<a href="gol3d.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (26MB)</span>
+            		</a>
+            		<a href="gol3d.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (6KB)</span>
+            		</a>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		Diese Software überträgt das Konzept von Conway's Game of Life aus dem 2D in den 3D-Raum.
+            		Statt 8 Nachbaren hat eine Zelle nun 26. Die Welt hat kein Ende, da die Nachbaren der in der Darstellung unteren Zellen wieder die oberen Zellen sind usw.
+            	
+            	</p>
+            	<img src="img1.png" style="width: 951px; height: 652px;">
+            	<br>
+            	<p>
+            		Zum Erstellen einer Simulation sollte zuerst die Größe (Seitenlänge) der Welt festgelegt werden. 
+            		Zur besseren Übersicht lässt sich die Rendergröße der einzelnen Würfel einstellen und ein Achsenindikator anzeigen.
+            		Die Ansicht kann mit der Maus gedreht werden.
+            		Zu Beginn einer Simulation sollten bereits einige Zellen leben (grüner Würfel). Mit dem Knopf "Generate living cells" werden entsprechend der 
+            		gegebenen Wahrscheinlichkeit zufällige Zellen zum Leben erweckt. Unten in der Infoleiste wird kurz die ganue Anzahl angezeigt. 
+            	</p>
+            	<p>
+            		Um nun zu beinflussen, wie eine Zelle auf ihr Umfeld reagiert, müssen Regeln gestezt werden.
+            		Es gibt isngesamt 27 Fälle die eine Zelle antreffen kann: 0 lebenden Nachbaren bis 26 lebenden Nachbaren.
+            		Für jeden dieser Fälle wird festgelegt wie die Zelle reagiert:
+            		<ul>
+            			<li><b>(X)</b> Zelle stirbt</li>
+            			<li><b>(A)</b> Zelle beginnt zu leben</li>
+            			<li><b>(S)</b> Zelle bleibt tod/lebendig</li>
+            		</ul>
+            	</p>
+            	<img src="img2.png" style="width: 346px; height: 469px;">
+            	<br>
+            	<p>
+            		Alternativ kann auch mit dem Knopf "Random ruleset" ein zufälliges Regelset erstellt werden.
+            	</p>
+            	<p>
+            		Sind zufällige Zellen erstellt und die Regeln gesetzt kann mit dem Knopf "Single step" die Simulation Schritt für Schritt durchgeführt oder
+            		mit dem "Play/Pause"-Knopf und dem eingestellten Delay automatisch abgespielt werden.
+            	</p>
+            	<p>Über das File-Menü kann die aktuelle Simulation als .GOL-Datei abgespeichert und zu einem späteren Zeitpunkt wieder geladen werden.</p>
+            	<br>
+            	<p>
+            		Beispielsimulation mit dem Ruleset: [X, A, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X]
+            	</p>
+            	
+            	<img src="img3.gif" style="border: 1px solid black; box-shadow: 0px 0px 13px 0px black;">
+
+            	</div>
+            	
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Spiel des Lebens 3D</span><br>
+            		<a href="gol3d.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (26MB)</span>
+            		</a>
+            		<a href="gol3d.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (6KB)</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

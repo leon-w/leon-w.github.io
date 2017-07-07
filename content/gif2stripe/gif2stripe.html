@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<title>GIF2STRIPE Converter - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>GIF2STRIPE Converter</h1>
+                <span>Python, TkInter, PIL</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">GIF2STRIPE Converter</span><br>
+            		<a href="gif2stripe.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (6MB)</span>
+            		</a>
+            		<a href="gif2stripe.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (5KB)</span>
+            		</a>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		Das .GIF Bild-Format ermöglicht mehrere Einzelbilder zu einer Animation zusammenzufügen. Manche Endanwendungen unterstützen kein GIF-Animationen
+            		sondern benötigen diese in Form eines "Filmstreifens", bei dem alle Einzelbilder nebeneinander liegen. Viele Converter erzeugen bei der Umwandlung
+            		von GIF zu Filmstreifen ein eindimensionales Band, was schnell zu sehr großen X-Werten und so zu Kompatibilitätsproblemen führen kann (z.B.: Die Unreal Engine 4
+            		unterstützt Bilder nur bis zu einer maximalen Auflösung von 8192x8192 Pixeln). Der GIF2STRIPE Converter ermöglicht eine zwiedimensional Verteilung der Frames
+            		und bietet darüber hinaus weitere hilfreiche Features bei der Umwandlung von GIF-Bildern zu Filmstreifen.
+            	</p>
+            		
+            		<img src="img2.gif" style="box-shadow: 0 0 13px -3px black;">
+            		<img src="img1.png" style="width: 60%;">
+            	</div>
+            	<div class="container">
+            		<p>
+            			Zuerst sollte mit einem Klick auf "Select File..." ein GIF-Bild geöffnet werden. 
+            		</p>
+            		<img src="img3.png" style="width: 440px; height: 570px;">
+            		<p>
+            			Erläuterung der Oberfläche:
+
+            			<ul>
+            				<li><b>Scale:</b> Skalierung der Einzelbilder in Prozent, um ggf. die Gesamtauflösung zu senken/erhöhen</li>
+            				<li><b>Used Frames:</b> Anzahl der verwendeten Einzelbilder, ermöglicht das Herrauskürzen von Frames, hilfreich wenn die Gesamtanzahl eine Primzahl ist</li>
+            				<li><b>X/Y:</b> Seitenverhältnis des Zielbildes</li>
+            				<li><b>Switch:</b> Verstauscht X und Y</li>
+            				<li><b>Best:</b> Bestimmt das optimale Seitenverhältnis</li>
+            				<li><b>BG:</b> Menü zur Wahl der Hintergrundfarbe für GIFs mit Transparenz (Schwarz, Weiß, Tranzparent, Benutzerdefiniert)</li>
+            			</ul>
+            			Das Vorschaufenster zeigt das gewählte Seitenverhältnis sowie die Hintergrundfüllung.<br>
+            			Der Ladebalken unten zeigt in Echtzeit den Fortschritt der Skalierung, der Zusammenfügung und des Abspeicherns.
+             		</p>
+             		<img src="img5.png" style="width: 618px; height: 570px;">
+            		
+            	</div>
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">GIF2STRIPE Converter</span><br>
+            		<a href="gif2stripe.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (6MB)</span>
+            		</a>
+            		<a href="gif2stripe.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (5KB)</span>
+            		</a>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

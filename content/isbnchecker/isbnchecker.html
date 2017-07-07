@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<title>ISBN Checker - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>ISBN Checker</h1>
+                <span>Python, TkInter, Web Scraping</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">ISBN Checker</span><br>
+            		<a href="isbn_checker.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (9MB)</span>
+            		</a>
+            		<a href="isbn_checker.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (13KB)</span>
+            		</a>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		ISBN-Nummern dienen zur eindeutigen Kennzeichnung von Büchern und sind nach folgendem Muster aufgebaut:
+            	
+            	</p>
+		        <p class="code">	             Land     Titelnummer
+	              |            |
+	              |            |
+	ISBN    978 - 3 - 89818 - 622 - 3
+	         |           |          |
+	         |           |          |
+	      Präfix      Verlag    Prüfziffer		
+            	</p>
+            	<p>
+            		Die Prüfziffer wird dazu verwendet, um z.B. zu überprüfen, ob die Nummer fehlerfrei eingelesen/übertragen wurde.
+            		Das Prüfverfahren funktioniert folgendermaßen:
+            	</p>
+
+            	<img src="img2.png" style="width: 488px; height: 422px;">
+            	<br>
+            	<p>
+            		Der ISBN Checker bietet über das simple Überprüfen von ISBN-Nummern hinaus zusätzlich die Möglichkeit, weitere Details zur 
+            		ISBN-Nummer aus dem Internet zu laden (bereitgestellt durch portal.dnb.de | Deutsche Nationalbibliothek).
+            	</p>
+            	<img src="img1.png" style="width: 743px; height: 645px;">
+            	<br>
+            	<p>
+            		Die zu prüfende ISBN-Nummer wird oben links eingegeben und erscheint dann in der Liste darunter. Ein Doppelklick auf einen Eintrag öffnet Details
+            		zur Prüfnummerberechnung (s. o.). Ist ein Eintrag ausgewählt, kann mit dem Knopf "Daten online beziehen" der Buchcover und Details wie Titel, Verlag oder 
+            		Sprache/Land heruntergeladen werden. Dieser Vorgang dauert etwa 2-7s.
+            		(Das Land wird mittels einer lokalen Datenbank bestimmt, daher sollte die Länge des Länderteils angegeben werden.)
+            	</p>
+            	<img src="img3.png" style="width: 394px; height: 188px;">
+            	<br>
+            	<p>
+            		Die heruntergeladenen Daten werden im Verzeichnis "saved" lokal zwischengespeichert und können beim Schließen des Programms wahlweise
+            		gelöscht oder behalten werden. <br>
+            		Zum Testen des Programms können mit Taste "E" 4 Beispiel-ISBNs geladen werden.
+            	</p>
+            	</div>
+            	
+            	
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">ISBN Checker</span><br>
+            		<a href="isbn_checker.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (9MB)</span>
+            		</a>
+            		<a href="isbn_checker.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (13KB)</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

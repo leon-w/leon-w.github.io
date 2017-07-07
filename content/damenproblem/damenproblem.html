@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<title>Damenproblem - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Damenproblem</h1>
+                <span>Python 2.7, TkInter</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Damenproblem (Solver & Viewer)</span><br>
+            		<a href="dp_exe.zip" class="d_button">Download Executable
+            		<br><span class="d_desc">2x .EXE in .ZIP (8MB)</span>
+            		</a>
+            		<a href="dp_source.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (4KB)</span>
+            		</a>
+            	</div>
+
+            	
+
+                <div class="container">
+                <p> 
+                    Das Damenproblem ist eine schachmathematische Aufgabe, in dem es darum geht, <i>n</i> Damen auf einem Schachbrett der Größe <i>n×n</i> zu platzieren ohne,
+                    dass sie sich gegenseitig bedrohen. Zum Lösen des Problems wird das Schachbrett zunächst als Graph konstruiert, die Kanten sind entsprechend der
+                    Bewegungsmöglichkeiten einer Dame gesetzt. Anschließend lößt ein Bruteforce-Algorithmus das gegebene Problem.
+                </p>
+                <p>
+                    Nach dem Starten der <i>dp_solver.exe</i> kann die Anzahl der Damen eingeben werden, für die das Problem gelößt werden soll. Ist die Berechnung abgeschlossen,
+                    wird die Anzahl der Lösungen sowie die verstrichene Zeit angezeigt. Die errechneten Damenpositionen der einzelnen Lösungen werden als Textdatei im gleichen
+                    Verzeichnis wie das Programm abgepeichert.
+                </p>
+                
+                <img src="img2.png" style="width: 455px; height: 189px;">
+                <br>
+                <p>
+                    Von mir ermittelte Werte: (9 und mehr zu rechenintensiv)
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Anzahl Damen</th>
+                        <th>Anzahl Lösungen</th>
+                        <th>Benötigte Zeit</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>1</th>
+                        <th>0.0s</th>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>0</th>
+                        <th>0.0s</th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>0</th>
+                        <th>0.0s</th>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <th>2</th>
+                        <th>0.001s</th>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <th>10</th>
+                        <th>0.012s</th>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <th>4</th>
+                        <th>0.181s</th>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <th>40</th>
+                        <th>4.11s</th>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <th>92</th>
+                        <th>130.32s</th>
+                    </tr>
+                </table>
+                
+                <p>
+                    Zur Visualisierung der der in den Textdateien (z.B.: <i>8 Damen Positionen.txt</i>) abgelegten Positionen kann <i>dp_viewer.exe</i> verwendet werden.
+                </p>
+
+                </div>
+
+                <div class="container">
+
+                <p>
+                    Nach dem Starten von <i>dp_viewer.exe</i> öffnet sich ein Dateidialog, in dem eine beliebige Positionsliste ausgewählt wird.
+                    Anschließend öffnet sich ein Fenster, auf dem die erste mögliche Lösung grafisch dargestellt wird. Mit den Knöpfen "Zurueck" und "Weiter" kann durch 
+                    die Lösungen navigiert werden.
+                </p>
+                <p>
+                    <b><u>Hinweis:</u></b> Dies ist eine interaktive Grafik, die Knöpfe "Zurueck" und "Weiter" sind voll funktionsfähig, einfach anklicken um weitere Positionen zu sehen!
+                </p>
+
+                    <div style="height: 477px;width: 406px;background-image: url('img1.png');margin-left: auto;margin-right: auto;display: block;" id="interactive_img">
+                        <img src="dummy.png" usemap="imagemap" style="height: 477px;width: 406px;"> 
+                        <map name="imagemap">
+                          <area shape="rect" coords="0,435,206,475" alt="back" href="javascript:void(0);" onclick="dec_index()">
+                          <area shape="rect" coords="207,435,404,475" alt="forward" href="javascript:void(0);" onclick="inc_index()">
+                        </map>
+                    </div>
+
+                    <script type="text/javascript">
+                        var a = document.getElementById("interactive_img");
+                        function set_frame(frame) {
+                            a.style.backgroundPositionX = (frame*(-406))+"px";
+                        }
+                        var index = 0;
+                        function inc_index() {
+                            index++;
+                            if(index>91){index=0}
+                            set_frame(index);
+                        }
+                        function dec_index() {
+                            index--;
+                            if(index<0){index=91}
+                            set_frame(index);
+                        }
+                    </script>
+                </div>
+                <div class="container">
+                    <img src="icon.png" class="d_icon">
+                    <span class="d_title">Damenproblem (Solver & Viewer)</span><br>
+                    <a href="dp_exe.zip" class="d_button">Download Executable
+                    <br><span class="d_desc">2x .EXE in .ZIP (8MB)</span>
+                    </a>
+                    <a href="dp_source.zip" class="d_button d_c2">Download Source
+                    <br><span class="d_desc">.ZIP (4KB)</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+</body>
+</html>

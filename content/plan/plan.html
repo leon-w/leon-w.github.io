@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<title>Schaltplangenerator für logische Funktionen - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Schaltplangenerator für logische Funktionen</h1>
+                <span>JavaScript, HTML</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Schaltplangenerator für logische Funktionen</span><br>
+            		<a href="source.html" target="_blank" class="d_button">In neuem Fenster öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            		<a href="javascript:void(0);" class="d_button d_c2" onclick="toggle_vis()">Hier öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            	</div>
+
+            	<div class="container" style="display: none" id="frame">
+            		<iframe src="source.html" width="100%" height="700px"></iframe>
+            		<script type="text/javascript">
+            		var frame_container = document.getElementById("frame");
+            		var v = false;
+            		function toggle_vis() {
+            			v = !v
+            			if (v){
+            				frame_container.style.display = "block"
+            			} else {
+            				frame_container.style.display = "none"
+            			}
+            			
+            		}
+            	</script>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		Logische Funktionen können darüber definiert werden, in welchen Fällen die Funktion 1 zurückliefert: (Eingaben: a,b,c | Ausgabe: y)
+            	</p>
+            	<b><table class="ftable"><thead><td></td><td>a</td><td>b</td><td>c</td><td>y =</td></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>3</td><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>4</td><td>1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>5</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>6</td><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>7</td><td>1</td><td>1</td><td>1</td><td>0</td></tr></tbody></table></b>
+            	<p>
+            		Dies kann zusammengefasst werden zu: <b>f(a,b,c)= ∑(0,2,4,6)</b>
+            	</p>
+            	<p>
+            		In genau diesem Format können logische Funktionen in den Schaltplangenerator eingegeben werden.
+            	</p>
+            	<img src="img1.png" style="width: 435px;height: 40px;box-shadow: 0px 0px 13px 0px black;">
+            	<br>
+            	<center><h2>Bestandteile des Schaltplangenerators</h2></center>
+            	<hr>
+            	<p>
+            		<h3>DNF:</h3>
+            		Überführung in die <a href="https://de.wikipedia.org/wiki/Disjunktive_Normalform">disjunktive Normalform:</a>  <b>y = a'b'c' + a'b'c + a'bc' + ab'c' + ab'c</b><br>
+            		(a' &#8793; ¬a &#8793; Negation von a)
+            	</p>
+            	<hr>
+            	<p>
+            		<h3>DNF-Schaltplan</h3>
+            		Erzeugen eines Schaltplanes aus der DNF<br>
+            		(• &#8793; NOT-Gate)
+            		<img src="img2.png" style="width: 420px;height: 620px">
+            	</p>
+            	<hr>
+            	<p>
+            		<h3>KV-Diagramm</h3>
+            		Minimierung der DNF mittels KV-Diagramm<br>
+            		(Eine Gruppe ist durch eine zufällige Farbe gekennzeichnet. Überlappende Gruppen erzeugen Mischfarben.)
+            		<img src="img3.png" style="width: 330px;height: 210px">
+            	</p>
+            	<hr>
+            	<p>
+            		<h3>DMF</h3>
+            		Disjunktive Minimalform bestimmt aus KV-Diagramm: <b>y = b' + a'c'</b><br>
+            	</p>
+            	<hr>
+            	<p>
+            		<h3>DMF-Schaltplan</h3>
+            		Erzeugen eines Schaltplanes aus der DMF<br>
+            		<img src="img4.png" style="width: 420px;height: 220px">
+            	</p>
+            	</div>
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Schaltplangenerator für logische Funktionen</span><br>
+            		<a href="source.html" target="_blank" class="d_button">In neuem Fenster öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            		<a href="javascript:void(0);" class="d_button d_c2" onclick="toggle_vis()">Hier öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

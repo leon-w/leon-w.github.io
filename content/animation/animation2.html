@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>Verschiedene Render-Experimente - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Verschiedene Render-Experimente</h1>
+                <span>Blender, Unreal Engine 4, Gimp</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            	<p>
+            		Wasserpistolen: (Blender Render)
+            	</p>
+       			<img src="1.png" class="fullimg">
+       			<img src="2.png" class="fullimg">
+       			<img src="3.png" class="fullimg">
+       			<p>
+            		Nachbau eines Platzes im Informatikraum: (UE4 Render)
+            	</p>
+       			<img src="4.png" class="fullimg">
+       			<p>
+            		Einfacher Charakter: (Blender Render)
+            	</p>
+       			<img src="5.png" class="fullimg">
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

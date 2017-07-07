@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>Turingtabelle aus .kara - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Turingtabelle aus .kara</h1>
+                <span>JavaScript, HTML</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Turingtabelle aus .kara</span><br>
+            		<a href="source.html" target="_blank" class="d_button">In neuem Fenster öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            		<a href="javascript:void(0);" class="d_button d_c2" onclick="toggle_vis()">Hier öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            	</div>
+
+            	<div class="container" style="display: none" id="frame">
+            		<iframe src="source.html" width="100%" height="700px"></iframe>
+            		<script type="text/javascript">
+            		var frame_container = document.getElementById("frame");
+            		var v = false;
+            		function toggle_vis() {
+            			v = !v
+            			if (v){
+            				frame_container.style.display = "block"
+            			} else {
+            				frame_container.style.display = "none"
+            			}
+            			
+            		}
+            	</script>
+            	</div>
+
+            	<div class="container">
+            	<p>
+            		TuringKara ist eine Software zur Simulation ein- / zweidimensionaler Turingmaschinen. Die erstellte Turingmaschine wird in Form eines Graphen dargestellt.
+            		Eine Ausgabe als Turingtabelle innerhalb von TuringKara ist nicht möglich. 
+            	</p>
+            	<img src="img1.png" style="width: 630px; height: 553px;">
+            	<br>
+
+            	<p>
+            		Zum Erzeugen einer Turingtabelle einfach die entsprechende .kara-Datei mit einem Klick auf "Datei auswählen" öffnen.
+            	</p>
+            	<img src="img2.png" style="width: 857px; height: 435px; border: 1px solid black; box-shadow: 0px 0px 13px 0px black;">
+            	</div>
+
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Turingtabelle aus .kara</span><br>
+            		<a href="source.html" target="_blank" class="d_button">In neuem Fenster öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            		<a href="javascript:void(0);" class="d_button d_c2" onclick="toggle_vis()">Hier öffnen
+            		<br><span class="d_desc">HTML</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

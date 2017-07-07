@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<title>Snake Level Editor - Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Snake Level Editor</h1>
+                <span>Python, TkInter</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Snake Level Editor</span><br>
+            		<a href="snake_level_editor.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (8MB)</span>
+            		</a>
+            		<a href="snake_level_editor.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (4KB)</span>
+            		</a>
+            	</div>
+
+            	<div class="container">
+            		<p>
+            			<i>"Snake ist ein Computerspielklassiker, bei dem eine sich gerade oder rechtwinklig bewegende Schlange durch ein Spielfeld gesteuert wird. 
+            			Ziel des Spieles ist, die als Futter angebotenen zufällig erscheinenden "Happen" aufzunehmen und Hindernissen, 
+            			einschließlich des eigenen Schlangenkörpers, auszuweichen. Während die Schlange mit jedem Happen wächst, 
+            			wird das Manövrieren bei zunehmend vollerem Spielfeld – und bei evtl. schnellerem Grundtakt – immer schwieriger."
+            			</i> - <a href="https://de.wikipedia.org/wiki/Snake">www.wikipedia.org/wiki/Snake</a>
+            		</p>
+            		<p>
+            			Snake kann im Endlosmodus sowie im Levelmodus gespielt werden. Im Levelmodus muss die Schlange alle Äpfel einsammeln, dann erscheint
+            			der Ausgang, der zum Bestehen des Levels erreicht werden muss. Diese vordefinierten Level werden häufig als Textdateien gespeichert,
+            			wobei ein Zeichen einem Block im Spiel entspricht.
+            		</p>
+            		<p>Beispiel:</p>
+            		<p class="code">	HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+	H    H       H               H
+	H    H     A H A       A     H
+	H  S H   H   H               H
+	H    H   H   H   HHHHHHHHH   H
+	H    H   H   H   H       H   H
+	H    H   H   H   H       H   H
+	H    H A H   H   H    A  H A H
+	H    H   H   H   H       H   H
+	H A  H   H   H   H   HHHHH   H
+	H    H   H A H   H           H
+	H    H   H   H   H   A       H
+	H    H   H   H   H           H
+	H    H A H   H   H   HHHHHHHHH
+	H    H   H   H   H   H       H		H: Wand
+	H A  H   H   H   H   H       H		A: Apfel
+	H    H   H   H A H   H A  E  H		S: Schlange
+	H        H       H           H		E: Ausgang
+	H        H       H           H
+	HHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+            		</p>
+            		<p>
+            			Da das manuelle Erstellen eines solchen Levels im Texteditor sehr mühsam und langwierig ist, 
+            			habe ich den Snake Level Editor erstellt:
+            		</p>
+            	</div>
+            	<div class="container">
+            		Nach dem Starten des Programmes öffnet sich ein Dialog, in dem  Levelname- und Auflösung eingegeben wird:
+            		<br>
+            		<br>
+            		<img src="img1.png" style="width: 262px; height: 122px;">
+            		<br>
+            		<br>
+            		Nach Bestätigung der Eingabe öffnet sich der eigentliche Editor:
+            		<br>
+            		<br>
+            		<img src="img2.png" style="width: 788px; height: 549px;" class="magic_img">
+            		<br>
+            		<br>
+            		Standartmäßig ist das Tool "Wand" ausgewählt. Ein Klick auf einen weißen Pixel färbt diesen mit dem aktuellen Tool.
+            		Hat der Pixel bereits eine Farbe, wird er beim Anklicken wieder weiß.
+            		<p>
+            			Erläuterung der Einzelnen Menüpunkte:
+            			<ul>
+            				<li><u><b>Datei</b></u>
+            					<ul>
+            						<li><b>Schnellexport &rarr; </b><i>Exportiert das aktuelle Level als Textdatei auf den Desktop. (C:\Users\%USER%\Desktop\level.txt)</i></li>
+            						<li><b>Export &rarr; </b><i>Wie "Schnellexport", jedoch ermöglicht ein zusätzlicher Dialog das hinzufügen weiterer Daten zur Textdatei. (Optional, für manche Snake-Level-Loader hilfreich.)</i></li>
+            						<li><b>Schließen &rarr; </b><i>Beendet das Programm. (Nicht gespeicherter Fortschritt geht verloren!)</i></li>
+            					</ul>
+            				</li>
+            				<br>
+            				<li><u><b>Block</b></u>
+            					<ul>
+            						<li><b>Wand &rarr; </b><i>Rüstet "Wand" als aktuellen Block aus.</i></li>
+            						<li><b>Apfel &rarr; </b><i>Rüstet "Apfel" als aktuellen Block aus.</i></li>
+            						<li><b>Schlange &rarr; </b><i>Rüstet "Schlange" als aktuellen Block aus. (Max. 1 pro Level erlaubt, falls dieser Block bereits im Level platziert ist, wird die alte Position gelöscht.)</i></li>
+            						<li><b>Ausgang &rarr; </b><i>Rüstet "Ausgang" als aktuellen Block aus. (Max. 1 pro Level erlaubt, falls dieser Block bereits im Level platziert ist, wird die alte Position gelöscht.)</i></li>
+            					</ul>
+            				</li>
+            				<br>
+            				<li><u><b>Tools</b></u>
+            					<ul>
+            						<li><b>Rahmen &rarr; </b><i>Zieht einen Rahmen aus Wänden um das Level.</i></li>
+            						<li><b>Graph &rarr; </b><i>Verbindet 2 gewählte Punkte mit Wand-Blöcken wenn diese die gleiche X-, oder Y-Koordinate haben.</i></li>
+            						<li><b>Leeren &rarr; </b><i>Setzt alle Pixel auf Weiß.</i></li>
+            					</ul>
+            				</li>
+            				<br>
+            				<li><u><b>Einstellungen</b></u>
+            					<ul>
+            						<li><b>Einstellungen &rarr; </b><i>Öffnet ein Einstellungsmenü, in dem die Pixelgröße und Gitterbreite des Editors eingestellt werden kann.</i></li>
+            						<li><b>Exporteinstellungen &rarr; </b><i>Öffnet ein Einstellungsmenü, in dem die Codierung der einzelnen Blöcke bearbeitet werden kann.</i></li>
+            						<li><b>Tutorial &rarr; </b><i>Öffnet ein Hilfsfenster.</i></li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</p>
+            		<img src="img4.png" style="width: 500px; height: 222px;">
+            	</div>
+            	<div class="container">
+            		<img src="icon.png" class="d_icon">
+            		<span class="d_title">Snake Level Editor</span><br>
+            		<a href="snake_level_editor.exe" class="d_button">Download Executable
+            		<br><span class="d_desc">.EXE (8MB)</span>
+            		</a>
+            		<a href="snake_level_editor.zip" class="d_button d_c2">Download Source
+            		<br><span class="d_desc">.ZIP (4KB)</span>
+            		</a>
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>

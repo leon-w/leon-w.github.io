@@ -1,0 +1,239 @@
+html, body {
+    font-family: "Calibri","PT Sans", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+h1 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    margin: 0;
+}
+.banner {
+    background-color: #255eba;
+    color: white;
+    padding: 10px;
+    padding-left: 70px;
+    margin-top: -150px;
+    box-shadow: 0px 1px 10px 0px black;
+    position: fixed;
+    width: 100%;
+}
+
+img {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.fullimg {
+    width: 100%;
+}
+
+.btn-menu {
+    font-size: 35px;
+    float: left;
+    margin-left: -60px;
+    padding-top:  10px;
+    color: white;
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#page_content {
+    margin: 150px 15% 20px 15%;
+}
+
+.container {
+    margin: 25px 0px 0px 0px;  
+    padding: 20px 30px 20px 30px;
+    background-color: #f3f3f3;
+    box-shadow: 0 0 10px 0px black;
+}
+
+#contentwrapper{
+    float: left;
+    width: 100%;
+}
+
+#content{
+    margin-left: 250px;
+    top: 0;
+    left: 0px;        
+    transition: all 0.2s ease-out;
+}
+
+#sidebar{
+    float: left;
+    width: 250px;
+    margin-left: 0px;
+    height: 100%;
+    background-color: #f3f3f3;
+    box-shadow: 2px 0 10px black;
+    position: fixed; 
+    left: 0px;        
+    transition: all 0.2s ease-out;
+}
+
+#sidemenu {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sidemenubit {
+    padding: 15px;
+    padding-left: 40px;
+    cursor: pointer;
+}
+
+.sidemenubit:hover {
+    background-color: #d2d2d2;
+}
+
+.sidemenuclose {
+    padding: 0px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    user-select: none;
+}
+
+.sidemenuclose:hover {
+    background-color: #d2d2d2;
+}
+
+.sidemenutitle {
+    padding: 10px;
+    padding-bottom: 0px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.innersidebar {
+    height: 100%;
+    width: 250px;
+    overflow: auto;
+}
+
+.d_icon {
+    height: 128px;
+    width: 128px;
+    float: left;
+}
+
+.d_title {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.d_button {
+    display: inline-block;
+    margin: 30px 10px 5px 20px;
+    height: 40px;
+    width: 220px;
+    padding: 5px 0px 15px 20px;
+  
+    background-color: #4e8236;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -3px black;
+    text-shadow: 0 0 20px black;
+    transition: all 0.5s ease-out;
+}
+
+.d_button:hover {
+    background-color: #333333;
+    box-shadow: 0 0 10px 0px black;
+}
+
+.d_desc {
+    font-size: 13px;
+    text-align: left;
+}
+
+.d_c2 {
+    background-color: #986408;
+}
+
+.code {
+    font-family: Consolas, monaco, monospace;
+    color: #5a5a5a;
+    font-size: 20px;
+    white-space: pre;
+    text-shadow: 0 0 50px black;
+}
+
+.magic_img:hover {
+    content:url(/content/snakeleveleditor/img3.png);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  box-shadow: 0px 0px 13px 0px black;
+}
+th, td {
+  padding: 10px;
+}
+
+.ftable {
+    border: 3px solid black;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.ftable td, .ftable th{
+    border: 2px solid black;
+    width: 100px;
+    text-align: center;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #777777;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

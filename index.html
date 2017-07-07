@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Leon's Software</title>
+<link rel="stylesheet" href="/res/style.css">
+<link rel="icon" sizes="16x16 32x32" href="/res/favicon.ico">
+<meta charset="UTF-8">
+<body>
+<div id="contentwrapper">
+    <div id="content">
+        <div class="innercontent">
+            <div class="banner">
+                <button class="btn-menu" onclick="toggle_sidebar()" title="Seitenübersicht">&#9776;</button>
+                <h1>Leon's Software</h1>
+                <span>Startseite</span>
+            </div>
+            <div id="page_content">
+            	<div class="container">
+	            	<h3>Willkommen bei Leon's Software!</h3>
+	                <p>
+	                	Auf dieser Seite sind einige meiner Softwareprojekte veröffentlich und stehen zum Download bereit.
+	                	Zum Öffnen eines bestimmten Projektes einfach den entsprechenden Eintrag im Menü anklicken.
+	                	Das Menü kann mit dem &#9776;-Knopf ein- und ausgeklappt werden.
+	                </p>
+	                <p>
+	                	Pythonprogramme wurden mit PyInstaller zu .EXE Standalone-Programmen umgewandelt: <a href="http://www.pyinstaller.org/">www.pyinstaller.org</a>
+	                </p>
+            	</div>
+            	<div class="container">
+            		<img alt="Python Logo" src="/res/logo.png">
+            	</div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar">
+    <div class="innersidebar">
+        <ul id="sidemenu">
+            <li class="sidemenuclose" onclick="toggle_sidebar()" title="Seitenübersicht schließen">×</li>
+            <hr>
+            <li class="sidemenubit" onclick="location.href='/index.html'">Startseite</li>
+            <hr>
+        </ul>
+    </div>
+</div>
+
+<script src="/res/menudata.js"></script>
+<script src="/res/sidebar.js"></script>
+
+</body>
+</html>
